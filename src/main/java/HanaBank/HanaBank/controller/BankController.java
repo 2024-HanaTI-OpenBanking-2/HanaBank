@@ -1,13 +1,12 @@
 package HanaBank.HanaBank.controller;
 
+import HanaBank.HanaBank.dto.AccountCiResponseDTO;
 import HanaBank.HanaBank.entity.BankAccount;
 import HanaBank.HanaBank.service.BankService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/accountinfo")
@@ -16,8 +15,9 @@ public class BankController {
   @Autowired
   private BankService bankService;
 
-  @GetMapping("/list")
-  public List<BankAccount> getAccountsByCi(@RequestParam String ci) {
-    return bankService.getAccountsByCi(ci);
+  @PostMapping("/list")
+  public ResponseEntity<List<BankAccount>> getAccountsByCi(@RequestBody AccountCiResponseDTO accountCiResponseDTO) {
+    List<BankAccount> response = bankService.getAccountsByCi(accountCiResponseDTO.getCi());
+    return ResponseEntity.ok(response);
   }
 }
