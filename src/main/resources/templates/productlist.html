@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="/css/productliststyle.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="bank">
+  <div class="text-wrapper">Bank 2</div>
+  <div class="navbar">
+    <div class="div">text</div>
+    <div class="text-wrapper-2">text</div>
+    <div class="text-wrapper-3"><a href="/login">login</a></div>
+    <div class="text-wrapper-4">text</div>
+    <div class="text-wrapper-5">text</div>
+  </div>
+  <div class="overlap-group">
+    <div class="rectangle">
+      <div class="rectangle-2"></div>
+    </div>
+    <div class="product_filter_container">
+      <button class="product_filter" data-type="all">전체 상품</button>
+      <button class="product_filter" data-type="Deposit">입출금</button>
+      <button class="product_filter" data-type="Investment">예금</button>
+      <button class="product_filter" data-type="Investment">적금</button>
+    </div>
+    <p class="p">계좌 개설 / 상품 조회</p>
+    <img class="line" src="/img/line-31.svg" th:src="@{/img/line-31.svg}"/>
+    <div class="product_list_container" id="product-container">
+      <div class="product_list_content" th:each="product : ${allProducts}">
+        <div class="text-wrapper-13" th:text="${product.productName}">달달하나 급여통장</div>
+        <div class="rectangle-13" th:text="${product.productType}">예금</div>
+        <div class="text-wrapper-14" th:text="${product.interestRate + ' %'}">3.00 %</div>
+        <button class="join_button" th:data-id="${product.productId}">상품 가입</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.product_filter').click(function() {
+      const productType = $(this).data('type');
+
+      $.ajax({
+        url: '/productlist',
+        type: 'GET',
+        data: { type: productType },
+        success: function(products) {
+          const productList = $('#product-container');
+          productList.empty();
+          products.forEach(product => {
+            const productItem = `
+              <div class="product_list_content">
+                <div class="text-wrapper-13">${product.productName}</div>
+                <div class="rectangle-13">${product.productType}</div>
+                <div class="text-wrapper-14">${product.interestRate} %</div>
+                <button class="join_button" th:data-id="${product.productId}">상품 가입</button>
+              </div>
+            `;
+            productList.append(productItem);
+          });
+        }
+      });
+    });
+
+    // 상품 가입 버튼 클릭 이벤트 처리
+    $(document).on('click', '.join_button', function() {
+      const productId = $(this).data('id');
+      $.ajax({
+        url: '/checkLogin', // 로그인 여부를 확인하는 엔드포인트
+        type: 'GET',
+        success: function(isLoggedIn) {
+          if (isLoggedIn) {
+            window.location.href = `/joinproduct?productId=` + productId;
+          } else {
+            window.location.href = '/login';
+          }
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

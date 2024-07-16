@@ -4,11 +4,14 @@ import HanaBank.HanaBank.entity.BankCustomer;
 import HanaBank.HanaBank.service.BankCustomerService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import java.util.Collections;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
@@ -38,5 +41,13 @@ public class LoginController {
     HttpSession session = request.getSession();
     session.invalidate();
     return "redirect:/login";
+  }
+
+  @GetMapping("/checkLogin")
+  @ResponseBody
+  public Map<String, Boolean> checkLogin(HttpSession session) {
+    BankCustomer customer = (BankCustomer) session.getAttribute("customer");
+    boolean loggedIn = (customer != null);
+    return Collections.singletonMap("loggedIn", loggedIn);
   }
 }

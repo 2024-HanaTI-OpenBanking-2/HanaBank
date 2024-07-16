@@ -44,8 +44,8 @@ public class BankAccount {
   @Column(name = "maturity_date", length = 100)
   private String maturityDate;
 
-  @Column(name = "product_name", length = 100)
-  private String productName;
+  @Column(name = "product_id", length = 100)
+  private Integer productId;
 
   @Column(name = "dormancy_yn", length = 10)
   private String dormancyYn;

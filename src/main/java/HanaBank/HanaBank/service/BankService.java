@@ -31,4 +31,8 @@ public class BankService {
   public List<BankAccount> getAccountsByCustomerId(String customerId) {
     return bankAccountRepository.findByCustomerId(customerId);
   }
+
+  public void saveBankAccount(BankAccount bankAccount) {
+    bankAccountRepository.save(bankAccount);
+  }
 }

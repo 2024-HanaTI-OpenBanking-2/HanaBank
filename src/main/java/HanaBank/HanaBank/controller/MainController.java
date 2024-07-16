@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
+
   @GetMapping("/home")
   public String home(HttpServletRequest request, Model model) {
     HttpSession session = request.getSession();
@@ -20,4 +21,8 @@ public class MainController {
     return "home";
   }
 
+//  @GetMapping("/joinproduct")
+//  public String joinproduct() {
+//    return "joinproduct";
+//  }
 }
