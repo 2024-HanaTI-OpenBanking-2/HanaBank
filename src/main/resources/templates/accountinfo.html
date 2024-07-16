@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/css/accountinfostyle.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var group1 = document.querySelector('.group1');
+      var group2 = document.querySelector('.group2');
+      var otherBankSection = document.querySelector('.text-wrapper-8');
+
+      if (group1 && group2 && otherBankSection) {
+        var group1Height = group1.offsetHeight;
+        var group1Top = group1.offsetTop;
+        var otherBankSectionHeight = otherBankSection.offsetHeight;
+
+        group2.style.top = (group1Top + group1Height + otherBankSectionHeight + 50) + 'px';
+      }
+    });
+  </script>
+</head>
+<body>
+<div class="bank" th:fragment="bank">
+  <div class="div">
+    <div class="text-wrapper">HanaBank</div>
+    <div class="navbar">
+      <div class="text-wrapper-2">text</div>
+      <div class="text-wrapper-3">text</div>
+      <div class="text-wrapper-4"><a href="/logout">logout</a></div>
+      <div class="text-wrapper-5">text</div>
+      <div class="text-wrapper-6">text</div>
+    </div>
+    <div class="overlap">
+      <div class="rectangle"><div class="rectangle-2"></div></div>
+      <div class="text-wrapper-7">입출금 계좌 조회</div>
+      <div class="text-wrapper-8">예적금 계좌 조회</div>
+
+      <!-- 입출금 계좌의 갯수와 잔액 합계 표시 -->
+      <div class="group1" th:style="'height: ' + (${depositWithdrawAccounts.size()} * 87 + 120) + 'px;'">
+        <div class="overlap-group">
+          <div class="overlap-2">
+            <div class="text-wrapper-9">입출금 계좌 갯수: <span th:text="${depositWithdrawCount}">0</span></div>
+            <div class="text-wrapper-11">잔액 합계: <span th:text="${depositWithdrawBalanceSum}">0</span></div>
+          </div>
+          <div th:each="account : ${depositWithdrawAccounts}" class="account_content">
+            <div class="text-wrapper-12" th:text="${account.balance}">00,000원</div>
+            <div class="text-wrapper-13" th:text="${account.accountName}">계좌명</div>
+            <div class="text-wrapper-14" th:text="${account.accountNum}">000-000000-00000</div>
+            <div class="div-wrapper"><div class="text-wrapper-15">이체</div></div>
+            <div class="overlap-group-2"><div class="text-wrapper-16">거래내역</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 예적금 계좌의 갯수와 잔액 합계 표시 -->
+      <div class="group2" th:style="'height: ' + (${savingsAccounts.size()} * 87 + 120) + 'px;'">
+        <div class="overlap-group">
+          <div class="overlap-2">
+            <div class="text-wrapper-9">예적금 계좌 갯수: <span th:text="${savingsCount}">0</span></div>
+            <div class="text-wrapper-11">잔액 합계: <span th:text="${savingsBalanceSum}">0</span></div>
+          </div>
+          <div th:each="account : ${savingsAccounts}" class="account_content">
+            <div class="text-wrapper-12" th:text="${account.balance}">00,000원</div>
+            <div class="text-wrapper-13" th:text="${account.accountName}">계좌명</div>
+            <div class="text-wrapper-14" th:text="${account.accountNum}">000-000000-00000</div>
+            <div class="div-wrapper"><div class="text-wrapper-15">이체</div></div>
+            <div class="overlap-group-2"><div class="text-wrapper-16">거래내역</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

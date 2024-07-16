@@ -1,0 +1,244 @@
+.bank {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.bank .div {
+  background-color: #ffffff;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+}
+
+.bank .overlap-group {
+  position: absolute;
+  width: 1440px;
+  height: 857px;
+  top: 167px;
+  left: 0;
+  background-color: #eeeeee;
+}
+
+.bank .overlap {
+  position: absolute;
+  width: 1141px;
+  height: 337px;
+  top: 64px;
+  left: 149px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.bank .text-wrapper {
+  position: absolute;
+  top: 128px;
+  left: 536px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.bank .div-wrapper {
+  position: absolute;
+  width: 261px;
+  height: 267px;
+  top: 468px;
+  left: 447px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.bank .text-wrapper-2 {
+  top: 114px;
+  left: 85px;
+  white-space: nowrap;
+  position: absolute;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.bank .overlap-2 {
+  position: absolute;
+  width: 261px;
+  height: 267px;
+  top: 468px;
+  left: 738px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.bank .text-wrapper-3 {
+  top: 114px;
+  left: 75px;
+  white-space: nowrap;
+  position: absolute;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.bank .overlap-3 {
+  position: absolute;
+  width: 261px;
+  height: 267px;
+  top: 468px;
+  left: 1029px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.bank .text-wrapper-4 {
+  top: 114px;
+  left: 103px;
+  white-space: nowrap;
+  position: absolute;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.bank .overlap-4 {
+  position: absolute;
+  width: 247px;
+  height: 22px;
+  top: 693px;
+  left: 147px;
+}
+
+.bank .line {
+  width: 246px;
+  height: 1px;
+  top: 21px;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.bank .img {
+  width: 29px;
+  height: 22px;
+  top: 0;
+  left: 218px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.bank .text-wrapper-5 {
+  top: 600px;
+  left: 160px;
+  position: absolute;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.bank .text-wrapper-6 {
+  position: absolute;
+  top: 49px;
+  left: 64px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 50px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.bank .navbar {
+  position: absolute;
+  width: 872px;
+  height: 31px;
+  top: 53px;
+  left: 458px;
+}
+
+.bank .text-wrapper-7 {
+  left: 0;
+  position: absolute;
+  width: 92px;
+  top: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.bank .text-wrapper-8 {
+  left: 493px;
+  position: absolute;
+  width: 92px;
+  top: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.bank .text-wrapper-9 {
+  left: 770px;
+  position: absolute;
+  width: 92px;
+  top: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.bank .text-wrapper-10 {
+  left: 328px;
+  position: absolute;
+  width: 92px;
+  top: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.bank .text-wrapper-11 {
+  left: 165px;
+  position: absolute;
+  width: 92px;
+  top: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
