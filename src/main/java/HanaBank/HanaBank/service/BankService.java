@@ -27,4 +27,8 @@ public class BankService {
     }
     return List.of();
   }
+
+  public List<BankAccount> getAccountsByCustomerId(String customerId) {
+    return bankAccountRepository.findByCustomerId(customerId);
+  }
 }
