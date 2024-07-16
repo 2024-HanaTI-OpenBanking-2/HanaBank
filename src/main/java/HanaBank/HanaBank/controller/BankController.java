@@ -17,7 +17,7 @@ public class BankController {
 
   @PostMapping("/list")
   public ResponseEntity<List<BankAccount>> getAccountsByCi(@RequestBody AccountCiResponseDTO accountCiResponseDTO) {
-    List<BankAccount> response = bankService.getAccountsByCi(accountCiResponseDTO.getCi());
+    List<BankAccount> response = bankService.getAccountsByCi(accountCiResponseDTO.getCi()); // 전송 타입 변경
     return ResponseEntity.ok(response);
   }
 }
