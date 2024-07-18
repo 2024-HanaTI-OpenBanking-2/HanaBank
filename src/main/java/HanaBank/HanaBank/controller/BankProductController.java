@@ -43,9 +43,7 @@ public class BankProductController {
   @GetMapping("/productlist/all")
   public String productlistPage(Model model, HttpSession session) {
     BankCustomer customer = (BankCustomer) session.getAttribute("customer");
-    if (customer == null) {
-      return "redirect:/login";
-    }
+    model.addAttribute("customer", customer);
     List<BankProduct> allProducts = bankProductService.getAllProduct();
     model.addAttribute("allProducts", allProducts);
     return "productlist";

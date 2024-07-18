@@ -3,55 +3,44 @@
 <head>
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="/css/joinproductstyle.css"/>
+  <link rel="stylesheet" href="/css/global.css"/>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      const $submitBtn = $('button[type="submit"]');
-      const $checkbox = $('input[type="checkbox"]');
-      const $accountName = $('input[name="accountName"]');
-      const $accountPassword = $('input[name="accountPassword"]');
-      const $confirmPassword = $('input[name="confirmPassword"]');
+  <style>
+    #confirmPassword:invalid {
+      border-color: red;
+    }
 
-      function validateForm() {
-        const isCheckboxChecked = $checkbox.is(':checked');
-        const isAccountNameFilled = $accountName.val().trim() !== '';
-        const isAccountPasswordValid = /^\d{6}$/.test($accountPassword.val());
-        const isPasswordConfirmed = $accountPassword.val() === $confirmPassword.val();
-
-        if (isCheckboxChecked && isAccountNameFilled && isAccountPasswordValid && isPasswordConfirmed) {
-          $submitBtn.prop('disabled', false);
-        } else {
-          $submitBtn.prop('disabled', true);
-        }
-      }
-
-      $checkbox.change(validateForm);
-      $accountName.on('input', validateForm);
-      $accountPassword.on('input', validateForm);
-      $confirmPassword.on('input', validateForm);
-
-      validateForm(); // 초기 상태에서 버튼 비활성화
-    });
-  </script>
+    #confirmPassword:valid {
+      border-color: green;
+    }
+  </style>
 </head>
 <body>
-<div class="bank">
-  <div class="text-wrapper">Bank 2</div>
+<div class="header">
+  <a href="home">
+    <div class="bank-logo"><img class="hana-logo" src="img/hana-logo.png">하나은행</div>
+  </a>
   <div class="navbar">
-    <div class="div">text</div>
-    <div class="text-wrapper-2">text</div>
-    <div class="text-wrapper-3"><a href="/login">login</a></div>
-    <div class="text-wrapper-4">text</div>
-    <div class="text-wrapper-5">text</div>
+    <div class="list_menu"><a href="/myaccount">조회</a></div>
+    <div class="transfer_menu">이체</div>
+    <div class="product_list_menu"><a href="/productlist/all">금융 상품</a></div>
+    <div class="text-wrapper-11">외환</div>
+    <div class="login_menu" th:text="${customer.name} + '님'">Customer greeting</div>
   </div>
-  <div class="overlap">
-    <div class="rectangle">
-      <div class="rectangle-2"></div>
-    </div>
-    <div class="text-wrapper-6">상품 가입</div>
+</div>
+<div class="bank">
+  <div class="rectangle">
+    <p class="text-wrapper-6">상품 가입</p>
     <form action="/joinproduct" method="post">
+      <div class="vertical-line"></div>
+      <div class="text-wrapper-15">상품명</div>
+      <div class="text-wrapper-12" th:text="${product.productName}">달달하나</div>
+      <div class="text-wrapper-10">상품 분류</div>
+      <div class="text-wrapper-13" th:text="${product.productType}">입출금</div>
+      <div class="text-wrapper-11">이자율</div>
+      <div class="text-wrapper-14" th:text="${product.interestRate} + '%'">3.00%</div>
       <input type="hidden" name="productId" th:value="${product.productId}"/>
       <div class="form-group">
         <label for="accountName" class="text-wrapper-9">계좌명</label>
@@ -59,17 +48,15 @@
       </div>
       <div class="form-group">
         <label for="accountPassword" class="text-wrapper-8">계좌 비밀번호</label>
-        <input type="password" id="accountPassword" name="accountPassword" placeholder="계좌 비밀번호 (숫자 6자리)" required/>
+        <input type="password" id="accountPassword" name="accountPassword"
+               placeholder="계좌 비밀번호 (숫자 6자리)" pattern="\d{6}" required/>
       </div>
       <div class="form-group">
         <label for="confirmPassword" class="text-wrapper-7">비밀번호 확인</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호 확인 (숫자 6자리)" required/>
+        <input type="password" id="confirmPassword" name="confirmPassword"
+               placeholder="비밀번호 확인 (숫자 6자리)" required
+               oninput="this.setCustomValidity(this.value != accountPassword.value ? '비밀번호가 일치하지 않습니다.' : '')"/>
       </div>
-      <div class="text-wrapper-10">상품 분류</div>
-      <div class="text-wrapper-11">이자율</div>
-      <div class="text-wrapper-12" th:text="${product.productName}">달달하나</div>
-      <div class="text-wrapper-13" th:text="${product.productType}">입출금</div>
-      <div class="text-wrapper-14" th:text="${product.interestRate} + '%'">3.00%</div>
       <div class="overlap-wrapper">
         <div class="div-wrapper">
           <a href="/productlist" class="text-wrapper-17">취소</a>
@@ -78,16 +65,49 @@
           <button type="submit" disabled class="text-wrapper-18">상품 가입</button>
         </div>
       </div>
-      <div class="text-wrapper-15">상품명</div>
       <div class="group">
         <div class="overlap-group">
-          <input type="checkbox">
+          <input type="checkbox" required>
           <div class="text-wrapper-16">상품가입 약관 전체 동의</div>
-          <a href="/pdf/예금거래기본약관.pdf"><span class="material-symbols-outlined">chevron_right</span></a>
+          <a href="/pdf/예금거래기본약관.pdf"><span
+              class="material-symbols-outlined">chevron_right</span></a>
         </div>
       </div>
     </form>
   </div>
 </div>
+<script>
+  $(document).ready(function () {
+    const $submitBtn = $('button[type="submit"]');
+    const $checkbox = $('input[type="checkbox"]');
+    const $accountName = $('input[name="accountName"]');
+    const $accountPassword = $('input[name="accountPassword"]');
+    const $confirmPassword = $('input[name="confirmPassword"]');
+
+    function validateForm() {
+      const isCheckboxChecked = $checkbox.is(':checked');
+      const isAccountNameFilled = $accountName.val().trim() !== '';
+      const isAccountPasswordValid = /^\d{6}$/.test($accountPassword.val());
+      const isPasswordConfirmed = $accountPassword.val() === $confirmPassword.val();
+
+      if (isCheckboxChecked && isAccountNameFilled && isAccountPasswordValid
+          && isPasswordConfirmed) {
+        $submitBtn.prop('disabled', false);
+      } else {
+        $submitBtn.prop('disabled', true);
+      }
+    }
+
+    $checkbox.change(validateForm);
+    $accountName.on('input', validateForm);
+    $accountPassword.on('input', function () {
+      $confirmPassword.attr('pattern', this.value);
+      validateForm();
+    });
+    $confirmPassword.on('input', validateForm);
+
+    validateForm(); // 초기 상태에서 버튼 비활성화
+  });
+</script>
 </body>
 </html>

@@ -1,171 +1,53 @@
-.bank {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-
-.bank .div {
-  background-color: #ffffff;
-  overflow: hidden;
-  width: 1440px;
-  height: 1024px;
-  position: relative;
-}
-
-.bank .text-wrapper {
-  position: absolute;
-  top: 49px;
-  left: 64px;
-  font-family: "Inter-Bold", Helvetica;
-  font-weight: 700;
-  color: #000000;
-  font-size: 50px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.bank .navbar {
-  position: absolute;
-  width: 872px;
-  height: 31px;
-  top: 53px;
-  left: 458px;
-}
-
-.bank .text-wrapper-2 {
-  left: 0;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-3 {
-  left: 493px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-4 {
-  left: 770px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-5 {
-  left: 328px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-6 {
-  left: 165px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .overlap {
-  position: absolute;
-  width: 1442px;
-  height: 859px;
-  top: 166px;
-  left: -1px;
-}
-
 .bank .rectangle {
-  position: absolute;
-  width: 1442px;
-  height: 859px;
-  top: 0;
-  left: 0;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-color: #000000;
-}
-
-.bank .rectangle-2 {
-  width: 1440px;
   height: 857px;
   background-color: #f7f7f7;
-  border: 1px solid;
-  border-color: transparent;
 }
 
 .bank .text-wrapper-7 {
-  position: absolute;
-  top: 69px;
+  top: 120px;
   left: 88px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
   font-size: 30px;
+  position: absolute;
+  color: #000000;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 .bank .text-wrapper-8 {
   position: absolute;
-  top: 458px;
+  top: 590px;
   left: 88px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   color: #000000;
   font-size: 30px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  font-weight: 500;
+}
+
+.bank .text-wrapper-8-1 {
+  position: absolute;
+  top: 500px;
+  left: 88px;
+  color: #000000;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 .bank .group1 {
   position: absolute;
   width: 1264px;
-  top: 136px;
+  top: 180px;
   left: 89px;
   background-color: #ffffff;
   border-radius: 20px;
   border: 1px solid #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .bank .group2 {
@@ -200,7 +82,7 @@
   height: 87px;
   top: 0;
   left: 0;
-  background-color: #e1e1e1db;
+  background-color: #009178;
   border-radius: 20px 20px 0px 0px;
 }
 
@@ -208,8 +90,6 @@
   position: absolute;
   top: 27px;
   left: 43px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   color: #ffffff;
   font-size: 25px;
   letter-spacing: 0;
@@ -220,8 +100,6 @@
 .bank .text-wrapper-10 {
   top: 27px;
   left: 48px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   color: #ffffff;
   font-size: 25px;
   position: absolute;
@@ -233,8 +111,6 @@
 .bank .text-wrapper-11 {
   top: 27px;
   left: 1020px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   color: #ffffff;
   font-size: 25px;
   position: absolute;
@@ -246,8 +122,6 @@
 .bank .text-wrapper-12 {
   top: 134px;
   left: 862px;
-  font-family: "Inter-Bold", Helvetica;
-  font-weight: 700;
   color: #000000;
   font-size: 25px;
   position: absolute;
@@ -259,21 +133,18 @@
 .bank .text-wrapper-13 {
   top: 125px;
   left: 43px;
-  font-family: "Inter-SemiBold", Helvetica;
-  font-weight: 600;
   color: #000000;
   font-size: 20px;
   position: absolute;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  font-weight: 500;
 }
 
 .bank .text-wrapper-14 {
   top: 150px;
   left: 43px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   color: #000000;
   font-size: 20px;
   position: absolute;
@@ -295,8 +166,6 @@
 .bank .text-wrapper-15 {
   top: 13px;
   left: 38px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   color: #000000;
   font-size: 20px;
   position: absolute;
@@ -320,8 +189,6 @@
 .bank .text-wrapper-16 {
   top: 12px;
   left: 19px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   color: #000000;
   font-size: 20px;
   position: absolute;
@@ -341,8 +208,6 @@
 .bank .text-wrapper-17 {
   top: 125px;
   left: 70px;
-  font-family: "Inter-SemiBold", Helvetica;
-  font-weight: 600;
   color: #000000;
   font-size: 20px;
   position: absolute;
@@ -355,8 +220,6 @@
   position: absolute;
   top: 125px;
   left: 248px;
-  font-family: "Inter-SemiBold", Helvetica;
-  font-weight: 600;
   color: #000000;
   font-size: 20px;
   letter-spacing: 0;

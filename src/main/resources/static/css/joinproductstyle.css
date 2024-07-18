@@ -1,149 +1,22 @@
-.bank {
-  position: relative;
-  width: 1440px;
-  height: 1024px;
-  background-color: #ffffff;
-  overflow: hidden;
-}
-
-.bank .text-wrapper {
-  position: absolute;
-  top: 49px;
-  left: 64px;
-  font-family: "Inter-Bold", Helvetica;
-  font-weight: 700;
-  color: #000000;
-  font-size: 50px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.bank .navbar {
-  position: absolute;
-  width: 872px;
-  height: 31px;
-  top: 53px;
-  left: 458px;
-}
-
-.bank .div {
-  left: 0;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-2 {
-  left: 493px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-3 {
-  left: 770px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-4 {
-  left: 328px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .text-wrapper-5 {
-  left: 165px;
-  position: absolute;
-  width: 92px;
-  top: 0;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.bank .overlap {
-  position: absolute;
-  width: 1427px;
-  height: 859px;
-  top: 196px;
-  left: -1px;
-}
-
 .bank .rectangle {
-  position: absolute;
-  width: 1427px;
-  height: 859px;
-  top: 0;
-  left: 0;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-color: #000000;
-}
-
-.bank .rectangle-2 {
-  width: 1425px;
   height: 857px;
   background-color: #f7f7f7;
-  border: 1px solid;
-  border-color: transparent;
 }
 
 .bank .text-wrapper-6 {
-  top: 39px;
+  top: 120px;
   left: 88px;
-  color: #000000;
   font-size: 30px;
-  white-space: nowrap;
   position: absolute;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
+  color: #000000;
   letter-spacing: 0;
   line-height: normal;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
-.bank .line {
-  width: 1261px;
-  height: 1px;
-  top: 95px;
-  left: 85px;
+form {
   position: absolute;
-  object-fit: cover;
 }
 
 .bank .text-wrapper-7,
@@ -157,18 +30,16 @@
   font-size: 20px;
   white-space: nowrap;
   position: absolute;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
 }
 
-.bank .text-wrapper-7 { top: 609px; left: 324px; }
-.bank .text-wrapper-8 { top: 539px; left: 324px; }
-.bank .text-wrapper-9 { top: 465px; left: 324px; }
-.bank .text-wrapper-10 { top: 301px; left: 324px; }
-.bank .text-wrapper-11 { top: 383px; left: 324px; }
-.bank .text-wrapper-15 { top: 222px; left: 324px; }
+.bank .text-wrapper-15 { top: 150px; left: 324px; }
+.bank .text-wrapper-10 { top: 220px; left: 324px; }
+.bank .text-wrapper-11 { top: 290px; left: 324px; }
+.bank .text-wrapper-9 { top: 360px; left: 324px; }
+.bank .text-wrapper-8 { top: 430px; left: 324px; }
+.bank .text-wrapper-7 { top: 500px; left: 324px; }
 
 .bank input[type="checkbox"] {
   display: block;
@@ -186,7 +57,7 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   position: relative;
-  top: 420px;
+  top: 320px;
   left: 545px;
 
 }
@@ -199,21 +70,19 @@
   font-size: 20px;
   white-space: nowrap;
   position: absolute;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
 }
 
-.bank .text-wrapper-12 { top: 229px; left: 554px; }
-.bank .text-wrapper-13 { top: 300px; left: 554px; }
-.bank .text-wrapper-14 { top: 383px; left: 554px; }
+.bank .text-wrapper-12 { top: 150px; left: 554px; }
+.bank .text-wrapper-13 { top: 220px; left: 554px; }
+.bank .text-wrapper-14 { top: 290px; left: 554px; }
 
 .bank .group {
   position: absolute;
   width: 781px;
   height: 57px;
-  top: 119px;
+  top: 600px;
   left: 324px;
 }
 
@@ -244,8 +113,6 @@
   font-size: 20px;
   white-space: nowrap;
   /* position: absolute; */
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
 
@@ -263,7 +130,7 @@
   position: absolute;
   width: 330px;
   height: 59px;
-  top: 748px;
+  top: 680px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -286,8 +153,6 @@
   color: #000000;
   font-size: 16px;
   position: absolute;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
 }
@@ -299,9 +164,10 @@
 }
 
 .bank .text-wrapper-18 {
-  width: 65px;
-  top: 20px;
-  left: 43px;
+  width: 148px;
+  height: 59px;
+  /*background-color: rgb(14,114,114);*/
+  border-radius: 10px;
 }
 
 .bank button[type="submit"]:disabled {
@@ -310,7 +176,8 @@
 }
 
 .bank button[type="submit"]:enabled {
-  background-color: #d9d9d9;
+  background-color: #009178;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -321,3 +188,20 @@
   top: 1159px;
   left: -1474px;
 }
+#confirmPassword:invalid {
+  border-color: red;
+}
+
+#confirmPassword:valid {
+  border-color: green;
+}
+
+ .vertical-line {
+   border-left: 2px solid black;
+   height: 450px; /* 선의 높이를 설정합니다 */
+   margin: 0 10px; /* 선과 다른 요소 사이의 간격을 설정합니다 */
+   top: 120px;
+   position: absolute;
+   left: 480px;
+   width: 2px;
+ }

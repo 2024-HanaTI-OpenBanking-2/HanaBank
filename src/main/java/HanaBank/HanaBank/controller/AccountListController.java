@@ -25,7 +25,7 @@ public class AccountListController {
       List<BankAccount> accounts = bankService.getAccountsByCustomerId(customerId);
       // 입출금 계좌 필터링 및 계산
 //      System.out.println(accounts);
-      List<BankAccount> depositWithdrawAccounts = filterAccountsByType(accounts, "checking");
+      List<BankAccount> depositWithdrawAccounts = filterAccountsByType(accounts, "Deposit");
 //      System.out.println(depositWithdrawAccounts);
       int depositWithdrawCount = countAccounts(depositWithdrawAccounts);
       double depositWithdrawBalanceSum = sumAccountBalances(depositWithdrawAccounts);
@@ -35,6 +35,7 @@ public class AccountListController {
       int savingsCount = countAccounts(savingsAccounts);
       double savingsBalanceSum = sumAccountBalances(savingsAccounts);
 
+      model.addAttribute("customer", customer);
       model.addAttribute("depositWithdrawAccounts", depositWithdrawAccounts);
       model.addAttribute("depositWithdrawCount", depositWithdrawCount);
       model.addAttribute("depositWithdrawBalanceSum", depositWithdrawBalanceSum);

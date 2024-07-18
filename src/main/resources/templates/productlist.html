@@ -3,46 +3,61 @@
 <head>
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="/css/productliststyle.css"/>
+  <link rel="stylesheet" href="/css/global.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="bank">
-  <div class="text-wrapper">Bank 2</div>
+<div class="header">
+  <a th:if="${customer == null}" href="/index.html">
+    <div class="bank-logo"><img class="hana-logo" src="/img/hana-logo.png">하나은행</div>
+  </a>
+  <a th:if="${customer != null}" href="/home">
+    <div class="bank-logo"><img class="hana-logo" src="/img/hana-logo.png">하나은행</div>
+  </a>
   <div class="navbar">
-    <div class="div">text</div>
-    <div class="text-wrapper-2">text</div>
-    <div class="text-wrapper-3"><a href="/login">login</a></div>
-    <div class="text-wrapper-4">text</div>
-    <div class="text-wrapper-5">text</div>
-  </div>
-  <div class="overlap-group">
-    <div class="rectangle">
-      <div class="rectangle-2"></div>
+    <div class="list_menu"><a href="/myaccount">조회</a></div>
+    <div class="transfer_menu">이체</div>
+    <div class="product_list_menu"><a href="/productlist/all">금융 상품</a></div>
+    <div class="text-wrapper-11">외환</div>
+    <div class="login_menu">
+      <span th:if="${customer != null}" th:text="${customer.name + '님'}">Customer greeting</span>
+      <a th:if="${customer == null}" href="/login">로그인</a>
     </div>
+  </div>
+</div>
+<div class="bank">
+  <div class="rectangle">
+    <p class="p">계좌 개설 / 상품 조회</p>
     <div class="product_filter_container">
       <button class="product_filter" data-type="all">전체 상품</button>
       <button class="product_filter" data-type="Deposit">입출금</button>
       <button class="product_filter" data-type="Investment">예금</button>
       <button class="product_filter" data-type="Investment">적금</button>
     </div>
-    <p class="p">계좌 개설 / 상품 조회</p>
-    <img class="line" src="/img/line-31.svg" th:src="@{/img/line-31.svg}"/>
     <div class="product_list_container" id="product-container">
       <div class="product_list_content" th:each="product : ${allProducts}">
         <div class="text-wrapper-13" th:text="${product.productName}">달달하나 급여통장</div>
         <div class="rectangle-13" th:text="${product.productType}">예금</div>
+        <div class="gemli"> 연(세전, 1년)</br>우대금리 포함</div>
         <div class="text-wrapper-14" th:text="${product.interestRate + ' %'}">3.00 %</div>
         <button class="join_button" th:data-id="${product.productId}">상품 가입</button>
       </div>
     </div>
   </div>
 </div>
-</div>
 
 <script>
   $(document).ready(function() {
+    $('.product_filter[data-type="all"]').addClass('active');
+
     $('.product_filter').click(function() {
       const productType = $(this).data('type');
+
+      // 모든 버튼에서 active 클래스 제거
+      $('.product_filter').removeClass('active');
+
+      // 클릭된 버튼에 active 클래스 추가
+      $(this).addClass('active');
 
       $.ajax({
         url: '/productlist',
@@ -83,5 +98,6 @@
     });
   });
 </script>
+
 </body>
 </html>
